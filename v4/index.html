@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BuySooner Prototype V4</title>
+<style>
+html,body{margin:0;padding:0;height:100%;background:#f7fbfb}iframe{border:none;width:100%;height:100vh;display:block;background:#fff}.loading{position:fixed;inset:0;display:grid;place-items:center;font-family:Arial,sans-serif;color:#071f3a;background:linear-gradient(180deg,#fff 0,#f7fbfb 48%,#edf8f7 100%);z-index:5}.loading.hidden{display:none}
+</style>
+</head>
+<body>
+<div class="loading" id="loading">Loading BuySooner V4…</div>
+<iframe id="prototype" src="../index.html"></iframe>
+<script>
+const frame=document.getElementById('prototype');
+frame.addEventListener('load',()=>{
+  try {
+    const doc=frame.contentDocument||frame.contentWindow.document;
+
+    const css=document.createElement('link');
+    css.rel='stylesheet';
+    css.href='v4-overrides.css';
+    doc.head.appendChild(css);
+
+    const script=document.createElement('script');
+    script.src='v4-page1-copy.js';
+    script.onload=()=>{
+      if(frame.contentWindow.applyV4Copy){
+        frame.contentWindow.applyV4Copy(doc);
+      }
+    };
+    doc.body.appendChild(script);
+
+    document.getElementById('loading').classList.add('hidden');
+  } catch(err){
+    console.error(err);
+    document.getElementById('loading').innerHTML='V4 failed to load.';
+  }
+});
+</script>
+</body>
+</html>
