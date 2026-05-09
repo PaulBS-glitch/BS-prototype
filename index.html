@@ -1076,6 +1076,33 @@
   }
 }
 
+
+    /* Page 1 UX/CX refinements */
+    #screen1 .hero { padding: 44px 44px 34px; }
+    #screen1 .hero-with-image { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.92fr); gap: 26px; align-items: stretch; }
+    #screen1 .hero-copy { display: grid; align-content: center; gap: 14px; }
+    #screen1 .hero h2 { margin-bottom: 0; max-width: 20ch; }
+    #screen1 .hero .promise { margin: 0; max-width: 58ch; line-height: 1.55; }
+    #screen1 .hero-image-panel { border-radius: 20px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 10px 28px rgba(7,31,58,0.09); min-height: 280px; }
+    #screen1 .hero-photo { width: 100%; height: 100%; object-fit: cover; display: block; }
+    #screen1 .fields { gap: 16px 20px; }
+    #screen1 input, #screen1 select { min-height: 48px; }
+    #screen1 .actions { margin-top: 34px; grid-template-columns: minmax(260px, auto) auto 1fr; }
+    #screen1 .primary, #screen1 .secondary { min-height: 52px; }
+
+    @media (max-width: 1024px) {
+      #screen1 .hero-with-image { grid-template-columns: 1fr; }
+      #screen1 .hero-image-panel { min-height: 220px; }
+      #screen1 .hero h2, #screen1 .hero .promise { max-width: 100%; }
+    }
+
+    @media (max-width: 560px) {
+      #screen1 .hero { padding: 26px 20px 24px; }
+      #screen1 .form-area { padding-top: 18px; }
+      #screen1 .section-card { border-radius: 18px; padding: 16px; }
+      #screen1 .radio-card { min-height: 72px; }
+      #screen1ActionBar { left: 0; right: 0; bottom: 10px; border-radius: 18px; }
+    }
 </style>
 </head>
 <body>
@@ -1086,7 +1113,7 @@
 <h1>BuySooner</h1><div class="brand-line"></div><p>Buy sooner. Buy smarter.</p>
 </div>
 <div class="card">
-<section class="hero hero-with-image"><div class="hero-copy"><h2>Ready to buy sooner?</h2><p class="promise">BuySooner helps you bridge the deposit gap, move into the home you want, and build equity from day one.</p><h3 class="check-title">Your 5-Minute Ownership Check</h3><p class="check-copy">Discover your buying power. We’ll calculate your deposit gap, the cost of delay, and your personalised BuySooner pathway in one simple view.</p></div><div class="hero-image-panel"><img alt="Couple holding keys to their new home" class="hero-photo" src="p1.jpg"/></div></section>
+<section class="hero hero-with-image"><div class="hero-copy"><h2>It’s never been harder to achieve the Great Australian Dream.</h2><p class="promise">Answer a few questions and we’ll show what waiting may be costing you, and how BuySooner may change the equation.</p></div><div class="hero-image-panel"><img alt="Couple holding keys to their new home" class="hero-photo" src="p1.jpg"/></div></section>
 <section class="form-area">
 <form id="scenarioForm" novalidate="">
 <p class="fact-title">It’s never been harder to buy your first home or move into a home you actually want.</p>
